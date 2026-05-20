@@ -1,0 +1,40 @@
+scale 1000 1 0.5
+rnode "VSS.n0" 0 0 -160 -603 0
+rnode "VSS.t1" 0 0 -138 -330 0
+rnode "VSS.n1" 0 0 -92 -603 0
+rnode "VSS.t0" 0 0 0 -330 0
+rnode "VSS.n2" 0 0 -160 -603 0
+rnode "VSS.n3" 0 0 -160 -603 0
+rnode "VSS.n4" 0 0 44 -603 0
+rnode "VSS.n5" 0 0 44 -603 0
+rnode "VSS" 0 0 109 -657 0
+resist "VSS.n4" "VSS.n0" 0.0005
+resist "VSS.n4" "VSS.n3" 0.0005
+resist "VSS" "VSS.n5" 0.0776927
+resist "VSS.n5" "VSS.n1" 0.107017
+resist "VSS.n3" "VSS.n2" 5.66717
+resist "VSS.n1" "VSS.t1" 5.88947
+resist "VSS.n5" "VSS.n4" 8.48726
+resist "VSS.n3" "VSS.n1" 8.48776
+resist "VSS.n2" "VSS.n0" 8.5005
+resist "VSS" "VSS.n0" 17.0028
+resist "VSS.n2" "VSS.t0" 1465.12
+rnode "Vout.t0" 0 0 138 523 0
+rnode "Vout.t1" 0 0 138 -260 0
+rnode "Vout" 0 0 154 -116 0
+resist "Vout" "Vout.t0" 2.43913
+resist "Vout" "Vout.t1" 5.84275
+rnode "VDD.t1" 0 0 -138 601 0
+rnode "VDD.t0" 0 0 71 785 0
+rnode "VDD.n0" 0 0 71 785 0
+rnode "VDD" 0 0 -22 746 0
+resist "VDD" "VDD.n0" 0.0129322
+resist "VDD.n0" "VDD.t1" 2.47445
+resist "VDD.n0" "VDD.t0" 11.3425
+rnode "vin.t0" 0 0 -39 -35 0
+rnode "vin.t1" 0 0 43 -164 0
+rnode "vin" 0 0 -41 -117 0
+resist "vin" "vin.t1" 7.53041
+resist "vin" "vin.t0" 7.55306
+device msubckt sg13_lv_nmos -100 -430 -99 -429  "VSS.t0" "vin.t1" 400 0 "VSS.t1" 200 13600,536 "Vout.t1" 200 13600,536
+device msubckt sg13_lv_pmos -100 31 -99 32  "VDD.t0" "vin.t0" 400 0 "VDD.t1" 600 40800,1336 "Vout.t0" 600 40800,1336

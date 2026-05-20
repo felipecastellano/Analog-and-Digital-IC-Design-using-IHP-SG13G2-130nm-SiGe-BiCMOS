@@ -1,0 +1,33 @@
+** sch_path: /home/fcastellanos/Documents/SEED_Bootcamp_ihp/Modulo_Analogico/Lab2/untitled.sch
+**.subckt untitled
+V1 VSS GND 0
+V2 VDD VSS 1.5
+V3 Vin VSS 1.5
+C1 vout VSS 10p m=1
+x1 VDD Vin vout VSS inverter22
+**** begin user architecture code
+ .lib cornerMOSlv.lib mos_tt
+
+
+
+.dc V3 0 1.5 0.01
+.save all
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/fcastellanos/Documents/SEED_Bootcamp_ihp/Modulo_Analogico/Lab2/inverter22.sym # of pins=4
+** sym_path: /home/fcastellanos/Documents/SEED_Bootcamp_ihp/Modulo_Analogico/Lab2/inverter22.sym
+** sch_path: /home/fcastellanos/Documents/SEED_Bootcamp_ihp/Modulo_Analogico/Lab2/inverter22.sch
+.subckt inverter22 VDD vin Vout VSS
+*.ipin vin
+*.iopin Vout
+*.iopin VDD
+*.iopin VSS
+XM1 Vout vin VSS VSS sg13_lv_nmos w=1u l=1u ng=1 m=1
+XM2 Vout vin VDD VDD sg13_lv_pmos w=3u l=1u ng=1 m=1 rfmode=1
+.ends
+
+.GLOBAL GND
+.end

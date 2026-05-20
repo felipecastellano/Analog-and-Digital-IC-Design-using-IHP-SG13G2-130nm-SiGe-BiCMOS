@@ -1,0 +1,66 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {}
+V {}
+S {}
+E {}
+N -20 60 60 60 {
+lab=VDD}
+N 60 -0 60 60 {
+lab=VDD}
+N 20 -0 60 -0 {
+lab=VDD}
+N -20 0 -20 30 {
+lab=VDD}
+N -20 160 60 160 {
+lab=VSS}
+N 60 160 60 220 {
+lab=VSS}
+N 20 220 60 220 {
+lab=VSS}
+N -20 190 -20 220 {
+lab=VSS}
+N -60 110 -60 160 {
+lab=Vin}
+N -60 60 -60 110 {
+lab=Vin}
+N -20 110 -20 130 {
+lab=#net1}
+N -20 110 100 110 {
+lab=#net1}
+N -20 90 -20 110 {
+lab=#net1}
+N -140 110 -60 110 {
+lab=Vin}
+N 20 -10 20 -0 {
+lab=VDD}
+N -20 0 20 -0 {
+lab=VDD}
+N 20 220 20 230 {
+lab=VSS}
+N -20 220 20 220 {
+lab=VSS}
+C {sg13g2_pr/sg13_lv_nmos.sym} -40 160 0 0 {name=M1
+l=0.13u
+w=0.15u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_rf_pmos.sym} -40 60 0 0 {name=M2
+l=0.72u
+w=1.0u
+ng=1
+m=1
+rfmode=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {ipin.sym} -230 80 0 0 {name=p1 lab=vin}
+C {lab_wire.sym} -140 110 0 0 {name=p2 sig_type=std_logic lab=Vin}
+C {ipin.sym} 20 -10 1 0 {name=p3 lab=VDD}
+C {ipin.sym} 20 230 3 0 {name=p4 lab=VSS}
+C {iopin.sym} 160 110 0 0 {name=p5 lab=Vout}
+C {lab_wire.sym} 100 110 2 0 {name=p6 sig_type=std_logic lab=Vout}
